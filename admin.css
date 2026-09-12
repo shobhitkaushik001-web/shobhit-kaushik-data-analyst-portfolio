@@ -1,0 +1,147 @@
+:root{--bg:#061510;--card:#0d2a21;--card2:#11352a;--text:#f7fbf8;--muted:#99b5a7;--line:#1d4b3b;--green:#22e27c;--shadow:0 24px 70px rgba(0,0,0,.36)}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 10%,rgba(34,226,124,.09),transparent 30%),var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;min-height:100vh}a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}.wrap{width:min(1120px,92%);margin:auto}header{border-bottom:1px solid var(--line);background:rgba(6,21,16,.9);backdrop-filter:blur(16px);position:sticky;top:0;z-index:40}.top{height:72px;display:flex;align-items:center;justify-content:space-between;font-size:11px}.brand{display:flex;align-items:center;gap:10px}.brand>span{font-size:28px;font-weight:900;color:var(--green)}.brand div{display:flex;flex-direction:column}.brand small{color:var(--muted);font-size:8px}.setup-warning{margin:28px 0 0;border:1px solid #7b6527;background:#211d0c;border-radius:14px;padding:14px 16px;display:flex;gap:12px}.setup-warning i{color:#ffd75c}.setup-warning b{font-size:11px}.setup-warning p{font-size:9px;color:#d7cda7;margin:3px 0 0}.auth-shell{min-height:calc(100vh - 170px);display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:45px 0 70px}.security-panel{padding:20px}.shield{width:72px;height:72px;border-radius:22px;background:linear-gradient(135deg,var(--green),#44efa0);color:#03130b;display:grid;place-items:center;font-size:32px;box-shadow:0 18px 55px rgba(34,226,124,.18);margin-bottom:22px}.eyebrow{font-size:9px;letter-spacing:.2em;color:var(--green);font-weight:800;margin:0 0 8px}.security-panel h1,.admin-header h1{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.05em;margin:0 0 14px}.security-panel>p:not(.eyebrow){color:var(--muted);font-size:12px;line-height:1.75}.security-points{display:grid;gap:10px;margin-top:25px}.security-points>div{display:flex;gap:12px;align-items:center;border:1px solid var(--line);background:var(--card);padding:13px;border-radius:13px}.security-points i{color:var(--green)}.security-points span{display:flex;flex-direction:column}.security-points b{font-size:10px}.security-points small{font-size:8px;color:var(--muted)}.login-card,.editor,.stats>div,.project-row{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.login-card{padding:28px}.login-icon{width:52px;height:52px;border-radius:15px;background:var(--card2);display:grid;place-items:center;color:var(--green);font-size:22px}.login-card h2{font-size:25px;margin:16px 0 5px}.login-card>p{font-size:9px;color:var(--muted)}.login-card label,.editor label{display:flex;flex-direction:column;gap:7px;margin-bottom:13px}.login-card label span,.editor label>span{font-size:9px;font-weight:800}.login-card input,.editor input,.editor textarea,.editor select{width:100%;border:1px solid var(--line);background:var(--card2);color:var(--text);border-radius:11px;padding:12px;outline:none;font-size:10px}.password-wrap{position:relative}.password-wrap button{position:absolute;right:7px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:var(--muted);cursor:pointer}.primary,.secondary,.danger{border-radius:11px;padding:11px 14px;font-size:10px;font-weight:800;cursor:pointer}.primary{border:0;background:linear-gradient(135deg,var(--green),#47efa2);color:#03120a}.secondary{background:var(--card2);border:1px solid var(--line);color:var(--text)}.danger{background:#34151a;color:#ff9ca7;border:1px solid #6a2630}.fullbtn{width:100%}.message{font-size:9px;margin-top:10px;min-height:14px;color:var(--muted)}.message.error{color:#ff8592}.message.success{color:var(--green)}.dashboard{padding:45px 0 75px}.admin-header{display:flex;justify-content:space-between;align-items:flex-end;gap:25px;margin-bottom:24px}.admin-header h1{font-size:44px}.admin-header p:last-child{font-size:9px;color:var(--muted)}.admin-actions{display:flex;gap:8px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}.stats>div{display:flex;gap:12px;padding:17px}.stats i{font-size:20px;color:var(--green)}.stats span{display:flex;flex-direction:column}.stats b{font-size:15px}.stats small{font-size:8px;color:var(--muted)}.project-list{display:grid;gap:11px}.project-row{padding:14px;display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center}.thumb{width:72px;height:50px;border-radius:9px;object-fit:cover;background:var(--card2);border:1px solid var(--line)}.project-row h3{font-size:12px;margin:0}.project-row p{font-size:8px;color:var(--muted)}.meta{display:flex;gap:6px}.chip{font-size:7px;padding:4px 6px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}.chip.live{color:var(--green)}.row-actions{display:flex;gap:6px}.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.76);backdrop-filter:blur(9px);z-index:100;align-items:center;justify-content:center;padding:16px}.modal.open{display:flex}.editor{width:min(760px,96vw);max-height:92vh;overflow:auto;padding:24px;position:relative}.close{position:absolute;right:16px;top:16px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card2);color:var(--text)}.editor h2{font-size:25px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.editor label{margin:0}.editor label.full{grid-column:1/-1}.editor textarea{resize:vertical}.editor small{font-size:8px;color:var(--muted)}.publish{grid-column:1/-1;flex-direction:row!important;align-items:center!important}.publish input{width:auto}.editor-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:17px}@media(max-width:760px){.auth-shell{grid-template-columns:1fr}.admin-header{flex-direction:column;align-items:flex-start}.stats{grid-template-columns:1fr}.project-row{grid-template-columns:58px 1fr}.row-actions{grid-column:1/-1}.grid{grid-template-columns:1fr}.editor label.full,.publish{grid-column:1}.security-panel{padding:0}}
+
+
+.setup-warning[hidden] {
+  display: none !important;
+}
+
+/* ===== ADMIN THEME TOGGLE ===== */
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    border: 1px solid rgba(34, 224, 139, 0.25);
+    background: #0d3328;
+    color: #22e08b;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 17px;
+    transition: all 0.25s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    border-color: #22e08b;
+}
+
+/* ===== LIGHT THEME ===== */
+
+body.light {
+    background: #f5fbf7;
+    color: #09261d;
+}
+
+body.light header {
+    background: #ffffff;
+    border-bottom-color: #d8e9df;
+}
+
+body.light .auth-shell,
+body.light .dashboard {
+    color: #09261d;
+}
+
+body.light .login-card,
+body.light .security-points > div,
+body.light .stats > div,
+body.light .project-row,
+body.light .editor {
+    background: #ffffff;
+    color: #09261d;
+    border-color: #cfe5d9;
+}
+
+body.light input,
+body.light textarea,
+body.light select {
+    background: #f7fbf9;
+    color: #09261d;
+    border-color: #cfe5d9;
+}
+
+body.light p,
+body.light small {
+    color: #527065;
+}
+
+body.light h1,
+body.light h2,
+body.light h3,
+body.light b,
+body.light label {
+    color: #09261d;
+}
+
+body.light .theme-toggle {
+    background: #ffffff;
+    color: #09261d;
+    border-color: #cfe5d9;
+}
+
+/* ===== ADMIN READABILITY UPDATE ===== */
+
+body {
+    font-size: 15px;
+}
+
+.security-panel > p,
+.login-card > p {
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.security-points b {
+    font-size: 11px;
+}
+
+.security-points small {
+    font-size: 9px;
+}
+
+.login-card label,
+.editor label {
+    font-size: 10px;
+}
+
+.login-card input,
+.editor input,
+.editor textarea,
+.editor select {
+    font-size: 11px;
+}
+
+.login-card button,
+.primary,
+.secondary {
+    font-size: 11px;
+}
+
+header {
+    font-size: 12px;
+}
+
+header small {
+    font-size: 9px;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    .security-panel > p,
+    .login-card > p {
+        font-size: 12px;
+    }
+
+    .security-points b {
+        font-size: 11px;
+    }
+
+    .security-points small {
+        font-size: 9px;
+    }
+}

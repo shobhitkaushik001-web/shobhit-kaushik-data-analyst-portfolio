@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project | Shobhit Kaushik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+:root{--bg:#061510;--card:#0d2a21;--card2:#11352a;--text:#f7fbf8;--muted:#9cb8aa;--line:#1d4b3b;--green:#22e27c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}a{text-decoration:none;color:inherit}.wrap{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;background:rgba(6,21,16,.92);backdrop-filter:blur(15px);border-bottom:1px solid var(--line);z-index:20}.top{height:70px;display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:800}.top a:last-child{border:1px solid var(--line);padding:9px 12px;border-radius:10px}
+.hero{padding:60px 0 32px}.eyebrow{font-size:10px;letter-spacing:.18em;color:var(--green);font-weight:800}.hero h1{font-size:clamp(42px,6vw,70px);letter-spacing:-.05em;line-height:1.03;margin:8px 0 14px}.lead{color:var(--muted);font-size:13px;line-height:1.8;max-width:760px}.tags{display:flex;flex-wrap:wrap;gap:6px;margin:17px 0}.tag{font-size:9px;border:1px solid var(--line);background:var(--card2);padding:6px 8px;border-radius:999px;color:var(--muted)}.actions{display:flex;gap:8px}.actions a{padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:10px;font-weight:800}.actions .primary{background:var(--green);color:#04120b;border-color:transparent}
+.gallery{display:grid;gap:15px;margin:30px 0}.gallery img{width:100%;border:1px solid var(--line);border-radius:16px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:25px 0}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}.card span{font-size:9px;color:var(--green);font-weight:800}.card h3{font-size:17px;margin:7px 0 9px}.card p{font-size:11px;color:var(--muted);line-height:1.75;margin:0}.wide{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:15px 0 25px}.wide h2{font-size:26px;margin:0 0 12px}.wide ol{font-size:11px;color:var(--muted);line-height:1.8;padding-left:20px}
+footer{margin-top:40px;border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:10px}@media(max-width:800px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap top"><a href="index.html#projects"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a><a id="repo" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></div></header>
+<main class="wrap">
+<section class="hero"><p id="type" class="eyebrow"></p><h1 id="title"></h1><p id="summary" class="lead"></p><div id="tags" class="tags"></div><div class="actions"><a id="repo2" target="_blank" class="primary"><i class="fa-brands fa-github"></i> Repository</a><a href="index.html#contact">Contact Me</a></div></section>
+<div id="gallery" class="gallery"></div>
+<section class="grid"><article class="card"><span>01</span><h3>Business Objective</h3><p id="objective"></p></article><article class="card"><span>02</span><h3>Data Preparation</h3><p id="prep"></p></article><article class="card"><span>03</span><h3>Analysis & Modeling</h3><p id="analysis"></p></article><article class="card"><span>04</span><h3>Dashboard Building</h3><p id="dashboard"></p></article></section>
+<section class="wide"><p class="eyebrow">PROJECT WORKFLOW</p><h2>How this project was built</h2><ol id="steps"></ol></section>
+</main>
+<footer><div class="wrap">Shobhit Kaushik · Data Analyst Portfolio</div></footer>
+<script src="project.js"></script>
+</body>
+</html>
