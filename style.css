@@ -3741,3 +3741,28 @@ body.light .project-insight {
     align-items: flex-start;
     gap: 8px;
 }
+
+/* ===== FINAL KEY INSIGHT ALIGNMENT ===== */
+
+.project-insight {
+    display: grid;
+    grid-template-columns: 18px auto 1fr;
+    align-items: start;
+    column-gap: 9px;
+    padding: 12px 14px;
+}
+
+.project-insight i {
+    margin: 2px 0 0 0;
+}
+
+.project-insight strong {
+    white-space: nowrap !important;
+    display: inline-block;
+    min-width: max-content;
+}
+
+.project-insight {
+    font-size: 11px;
+    line-height: 1.55;
+}
