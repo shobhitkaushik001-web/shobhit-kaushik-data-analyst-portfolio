@@ -3062,3 +3062,101 @@ body:not(.light) .google-cert-copy small {
         font-size: 11px;
     }
 }
+
+/* =====================================================
+   PREMIUM SOCIAL ICON HOVER / FLOAT ANIMATION
+===================================================== */
+
+/* RIGHT SIDE FLOATING SOCIAL ICONS */
+.floating-actions a {
+    position: relative;
+    transition:
+        transform 0.28s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.28s ease,
+        filter 0.28s ease !important;
+    will-change: transform;
+}
+
+/* Hover = left side float + slight zoom */
+.floating-actions a:hover {
+    transform: translateX(-8px) translateY(-2px) scale(1.10) !important;
+    box-shadow:
+        0 10px 22px rgba(0, 0, 0, 0.18),
+        0 0 0 4px rgba(18, 200, 125, 0.08) !important;
+    filter: brightness(1.06);
+}
+
+/* Icon itself */
+.floating-actions a i {
+    transition: transform 0.28s ease !important;
+}
+
+.floating-actions a:hover i {
+    transform: scale(1.12);
+}
+
+
+/* =====================================================
+   CONTACT / FOOTER SOCIAL BUTTONS
+===================================================== */
+
+/* Covers social/contact cards and buttons */
+.contact-card,
+.contact-links a,
+.social-links a,
+.footer-socials a {
+    transition:
+        transform 0.28s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.28s ease,
+        border-color 0.28s ease !important;
+}
+
+/* Float upward on hover */
+.contact-card:hover,
+.contact-links a:hover,
+.social-links a:hover,
+.footer-socials a:hover {
+    transform: translateY(-6px) !important;
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.11) !important;
+
+    border-color:
+        rgba(18, 200, 125, 0.45) !important;
+}
+
+
+/* =====================================================
+   SUBTLE IDLE FLOAT FOR RIGHT SIDE ICONS
+===================================================== */
+
+.floating-actions {
+    animation: socialPanelFloat 4s ease-in-out infinite;
+}
+
+@keyframes socialPanelFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .floating-actions {
+        animation: none;
+    }
+
+    .floating-actions a,
+    .contact-card,
+    .contact-links a,
+    .social-links a,
+    .footer-socials a {
+        transition: none !important;
+    }
+}
