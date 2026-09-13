@@ -6053,3 +6053,305 @@ footer p,
         padding: 14px !important;
     }
 }
+
+/* =========================================================
+   CERTIFICATIONS + TECHNICAL SKILLS
+   PERFECT EQUAL ALIGNMENT
+========================================================= */
+
+/* Whole section */
+#certifications,
+.certifications-section,
+.skills-certifications,
+.cert-skills-section {
+    padding: 32px 0 34px !important;
+}
+
+
+/* Main wrapper */
+.cert-skills-grid,
+.certifications-skills-grid,
+.credentials-grid {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 24px !important;
+
+    align-items: stretch !important;
+}
+
+
+/* Both left and right columns equal */
+.certifications-column,
+.skills-column,
+.cert-column,
+.technical-skills-column {
+    width: 100% !important;
+    min-width: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+
+/* Headings equal spacing */
+.certifications-column > h2,
+.skills-column > h2,
+.cert-column > h2,
+.technical-skills-column > h2,
+#certifications h2 {
+    min-height: 32px !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 5px !important;
+
+    font-size: 22px !important;
+    line-height: 1.15 !important;
+}
+
+
+/* Subtitle spacing equal */
+.certifications-column > p,
+.skills-column > p,
+.cert-column > p,
+.technical-skills-column > p {
+    min-height: 20px !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
+
+    font-size: 10px !important;
+}
+
+
+/* =========================================================
+   CERTIFICATION GRID
+========================================================= */
+
+.cert-grid,
+.certification-grid,
+.certifications-grid {
+    flex: 1 !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    grid-template-rows:
+        repeat(2, 1fr) !important;
+
+    gap: 12px !important;
+
+    align-items: stretch !important;
+}
+
+
+/* All certification cards exactly equal */
+.cert-card,
+.certification-card {
+    height: 105px !important;
+    min-height: 105px !important;
+    max-height: 105px !important;
+
+    padding: 14px 16px !important;
+
+    display: flex !important;
+    align-items: flex-start !important;
+
+    border-radius: 14px !important;
+
+    overflow: hidden !important;
+}
+
+
+/* Internal content */
+.cert-card > *,
+.certification-card > * {
+    min-width: 0 !important;
+}
+
+
+.cert-card h3,
+.certification-card h3 {
+    font-size: 13px !important;
+    line-height: 1.25 !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 3px !important;
+}
+
+
+.cert-card p,
+.certification-card p {
+    font-size: 10px !important;
+    line-height: 1.35 !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+}
+
+
+.cert-card a,
+.certification-card a {
+    font-size: 10px !important;
+}
+
+
+/* =========================================================
+   TECHNICAL SKILLS GRID
+========================================================= */
+
+.skills-grid,
+.technical-skills-grid {
+    flex: 1 !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr)) !important;
+
+    grid-template-rows:
+        repeat(2, 1fr) !important;
+
+    gap: 12px !important;
+
+    align-items: stretch !important;
+}
+
+
+/* All technical skill cards exactly equal */
+.skill-card,
+.tech-skill-card {
+    height: 105px !important;
+    min-height: 105px !important;
+    max-height: 105px !important;
+
+    padding: 12px 8px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+
+    border-radius: 14px !important;
+
+    overflow: hidden !important;
+}
+
+
+.skill-card i,
+.tech-skill-card i {
+    font-size: 21px !important;
+
+    margin: 0 0 7px !important;
+}
+
+
+.skill-card h3,
+.tech-skill-card h3 {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+
+    margin: 0 0 4px !important;
+}
+
+
+.skill-card p,
+.tech-skill-card p {
+    font-size: 9px !important;
+    line-height: 1.25 !important;
+
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .cert-skills-grid,
+    .certifications-skills-grid,
+    .credentials-grid {
+        gap: 20px !important;
+    }
+
+    .cert-card,
+    .certification-card,
+    .skill-card,
+    .tech-skill-card {
+        height: 100px !important;
+        min-height: 100px !important;
+        max-height: 100px !important;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .cert-skills-grid,
+    .certifications-skills-grid,
+    .credentials-grid {
+        grid-template-columns: 1fr !important;
+
+        gap: 28px !important;
+    }
+
+    .cert-grid,
+    .certification-grid,
+    .certifications-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .skills-grid,
+    .technical-skills-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr)) !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .cert-grid,
+    .certification-grid,
+    .certifications-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .skills-grid,
+    .technical-skills-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .cert-card,
+    .certification-card {
+        height: auto !important;
+        min-height: 96px !important;
+        max-height: none !important;
+    }
+
+    .skill-card,
+    .tech-skill-card {
+        height: 96px !important;
+        min-height: 96px !important;
+        max-height: 96px !important;
+    }
+}
