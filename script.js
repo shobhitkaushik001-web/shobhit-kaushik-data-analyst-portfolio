@@ -252,3 +252,40 @@ if (typingText) {
 
     typeRole();
 }
+
+/* ===== OPEN TO OPPORTUNITIES ===== */
+
+const opportunityButton = document.getElementById("openOpportunityModal");
+
+if (opportunityButton) {
+    opportunityButton.addEventListener("click", function () {
+        document.getElementById("opportunityModal")?.classList.add("active");
+        document.body.style.overflow = "hidden";
+    });
+}
+
+const opportunityClose = document.getElementById("closeOpportunityModal");
+const opportunityModal = document.getElementById("opportunityModal");
+
+if (opportunityClose) {
+    opportunityClose.addEventListener("click", function () {
+        opportunityModal.classList.remove("active");
+        document.body.style.overflow = "";
+    });
+}
+
+if (opportunityModal) {
+    opportunityModal.addEventListener("click", function (event) {
+        if (event.target === opportunityModal) {
+            opportunityModal.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+    });
+}
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && opportunityModal) {
+        opportunityModal.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+});
