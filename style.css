@@ -3880,3 +3880,348 @@ body.light .project-insight {
     height: 96% !important;
     transform: scale(1.18) !important;
 }
+
+
+/* =====================================================
+   MERGED FINAL RESPONSIVE OVERRIDES
+   Desktop base preserved + mobile working rules
+===================================================== */
+
+/* =====================================================
+   FINAL MOBILE HEADER FIX
+   iPhone + Android
+===================================================== */
+
+@media (max-width: 700px) {
+
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    * {
+        box-sizing: border-box !important;
+    }
+
+    .topbar {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+        padding-top: env(safe-area-inset-top) !important;
+    }
+
+    .topbar .nav-wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 40px 40px !important;
+        grid-template-areas:
+            "brand theme menu"
+            "certificate certificate certificate" !important;
+
+        align-items: center !important;
+        gap: 8px !important;
+
+        padding: 8px 12px !important;
+        margin: 0 !important;
+    }
+
+    .brand {
+        grid-area: brand !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .brand-copy {
+        min-width: 0 !important;
+    }
+
+    .brand-copy strong {
+        font-size: 13px !important;
+        white-space: nowrap !important;
+    }
+
+    .brand-copy small {
+        font-size: 9px !important;
+        white-space: nowrap !important;
+    }
+
+    .nav-actions {
+        display: contents !important;
+    }
+
+    #themeToggle {
+        grid-area: theme !important;
+
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    #menuBtn {
+        grid-area: menu !important;
+
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        z-index: 1002 !important;
+    }
+
+    .google-badge {
+        grid-area: certificate !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        height: auto !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 8px !important;
+
+        padding: 7px 10px !important;
+        margin: 0 !important;
+
+        overflow: hidden !important;
+    }
+
+    .google-cert-logo {
+        width: 26px !important;
+        height: 26px !important;
+        min-width: 26px !important;
+        object-fit: contain !important;
+    }
+
+    .google-cert-copy {
+        display: block !important;
+        min-width: 0 !important;
+        max-width: calc(100% - 50px) !important;
+    }
+
+    .google-cert-copy b {
+        display: block !important;
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+    }
+
+    .google-cert-copy small {
+        display: block !important;
+        font-size: 8px !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
+    }
+
+    .google-cert-check {
+        flex-shrink: 0 !important;
+    }
+
+    /* Mobile nav dropdown */
+    #nav {
+        position: absolute !important;
+
+        top: 100% !important;
+        left: 12px !important;
+        right: 12px !important;
+
+        width: auto !important;
+        max-width: calc(100% - 24px) !important;
+
+        display: none !important;
+        flex-direction: column !important;
+
+        padding: 10px !important;
+
+        background: var(--card) !important;
+        border: 1px solid var(--line) !important;
+        border-radius: 14px !important;
+
+        box-shadow: var(--shadow) !important;
+
+        z-index: 1001 !important;
+    }
+
+    #nav.open {
+        display: flex !important;
+    }
+
+    #nav a {
+        width: 100% !important;
+
+        padding: 10px 12px !important;
+
+        text-align: left !important;
+        white-space: nowrap !important;
+    }
+
+    /* Hero */
+    .hero {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        padding: 22px 14px 28px !important;
+
+        overflow: hidden !important;
+    }
+
+    .hero-layout {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 24px !important;
+
+        margin: 0 auto !important;
+    }
+
+    .hero-left,
+    .hero-center,
+    .hero-right {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .hero-center {
+        order: -1 !important;
+
+        max-width: 280px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .hero-left {
+        text-align: center !important;
+    }
+
+    .hero-left h1 {
+        font-size: clamp(40px, 12vw, 52px) !important;
+        line-height: .98 !important;
+    }
+
+    .hero-left p {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+    }
+
+    .hero-actions {
+        width: 100% !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+
+        gap: 10px !important;
+    }
+
+    .hero-actions a,
+    .hero-actions button {
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: center !important;
+    }
+
+    section,
+    main,
+    footer,
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .container {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+    #projectsGrid,
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .project-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+}
+
+@media (max-width: 390px) {
+
+    .topbar .nav-wrap {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .brand-copy strong {
+        font-size: 12px !important;
+    }
+
+    .hero-center {
+        max-width: 245px !important;
+    }
+
+    .hero-left h1 {
+        font-size: 40px !important;
+    }
+}
+
+/* =========================================
+   CERTIFICATIONS WIDTH FIX - DESKTOP ONLY
+========================================= */
+
+@media (min-width: 901px) {
+
+    #certifications {
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #certifications .container {
+        width: min(1320px, calc(100% - 80px)) !important;
+        max-width: 1320px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Certifications + Technical Skills main columns */
+    #certifications .cert-skills-grid,
+    #certifications .certifications-skills-grid,
+    #certifications .credentials-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        grid-template-columns:
+            minmax(0, 1.05fr)
+            minmax(0, .95fr) !important;
+
+        gap: 28px !important;
+    }
+}
