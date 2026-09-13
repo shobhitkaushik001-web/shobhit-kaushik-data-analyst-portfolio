@@ -3873,3 +3873,10 @@ body.light .project-insight {
         left: 7px;
     }
 }
+
+/* Starbucks logo size adjustment */
+.project-logo-badge img[src*="starbucks-logo"] {
+    width: 96% !important;
+    height: 96% !important;
+    transform: scale(1.18) !important;
+}
