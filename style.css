@@ -5181,3 +5181,408 @@ svg {
         font-size: 38px !important;
     }
 }
+
+/* =========================================================
+   LOWER SECTIONS COMPACT RESPONSIVE FIX
+   About + Featured Projects + Project Cards
+========================================================= */
+
+
+/* ---------- ABOUT SECTION ---------- */
+
+#about,
+.about-section,
+.about {
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#about .container,
+.about-section .container,
+.about .container {
+    width: min(1440px, calc(100% - 40px)) !important;
+    max-width: 1440px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* About two-column layout */
+.about-grid,
+.about-layout {
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(420px, .95fr) !important;
+
+    align-items: center !important;
+
+    gap: 55px !important;
+}
+
+
+/* About heading */
+#about h2,
+.about-section h2,
+.about h2 {
+    font-size: clamp(30px, 3vw, 42px) !important;
+    line-height: 1.08 !important;
+
+    margin-top: 8px !important;
+    margin-bottom: 18px !important;
+}
+
+
+/* About paragraph */
+#about p,
+.about-section p,
+.about p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+
+    max-width: 720px !important;
+}
+
+
+/* About button */
+#about .btn,
+.about-section .btn,
+.about .btn {
+    margin-top: 18px !important;
+}
+
+
+/* Right-side About cards */
+.about-card,
+.about-feature,
+.about-item {
+    min-height: 74px !important;
+
+    padding: 16px 18px !important;
+
+    margin-bottom: 12px !important;
+}
+
+
+/* =========================================================
+   FEATURED PROJECTS SECTION
+========================================================= */
+
+#projects,
+.projects-section,
+.featured-projects {
+    padding-top: 46px !important;
+    padding-bottom: 50px !important;
+
+    margin-top: 0 !important;
+}
+
+#projects .container,
+.projects-section .container,
+.featured-projects .container {
+    width: min(1440px, calc(100% - 40px)) !important;
+    max-width: 1440px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* Remove huge blank gap above Projects */
+#projects,
+.projects-section {
+    scroll-margin-top: 90px;
+}
+
+.section-heading,
+.section-head {
+    margin-bottom: 24px !important;
+}
+
+
+/* Featured Projects heading */
+#projects h2,
+.projects-section h2 {
+    font-size: clamp(32px, 3vw, 44px) !important;
+    line-height: 1.08 !important;
+
+    margin-bottom: 6px !important;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+#projectsGrid,
+.projects-grid {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 24px !important;
+
+    width: 100% !important;
+
+    align-items: stretch !important;
+}
+
+
+/* Card */
+.project-card {
+    width: 100% !important;
+
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    height: 100% !important;
+
+    border-radius: 18px !important;
+
+    overflow: hidden !important;
+}
+
+
+/* Dashboard image area */
+.project-image {
+    width: 100% !important;
+
+    height: 270px !important;
+
+    overflow: hidden !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+
+/* Dashboard screenshot */
+.project-image > img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: contain !important;
+
+    padding: 10px !important;
+}
+
+
+/* Project card content */
+.project-content {
+    padding: 18px 20px 20px !important;
+}
+
+
+/* Project title */
+.project-content h3 {
+    font-size: 18px !important;
+
+    line-height: 1.3 !important;
+
+    margin-bottom: 8px !important;
+}
+
+
+/* Description */
+.project-content > p {
+    font-size: 12px !important;
+
+    line-height: 1.6 !important;
+
+    margin-bottom: 12px !important;
+}
+
+
+/* Insight box */
+.project-insight {
+    padding: 10px 12px !important;
+
+    margin-top: 10px !important;
+    margin-bottom: 12px !important;
+
+    font-size: 11px !important;
+
+    line-height: 1.5 !important;
+}
+
+
+/* Tags */
+.project-tags {
+    gap: 6px !important;
+
+    margin-top: 10px !important;
+    margin-bottom: 12px !important;
+}
+
+
+/* Project buttons */
+.project-actions {
+    gap: 10px !important;
+
+    margin-top: 12px !important;
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1280px) {
+
+    #about .container,
+    .about-section .container,
+    #projects .container,
+    .projects-section .container {
+
+        width: min(1180px, calc(100% - 32px)) !important;
+    }
+
+    .about-grid,
+    .about-layout {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(360px, .9fr) !important;
+
+        gap: 38px !important;
+    }
+
+    .project-image {
+        height: 235px !important;
+    }
+}
+
+
+/* =========================================================
+   TABLET / IPAD
+========================================================= */
+
+@media (max-width: 900px) {
+
+    #about,
+    .about-section,
+    .about {
+        padding: 36px 18px !important;
+    }
+
+    .about-grid,
+    .about-layout {
+        grid-template-columns: 1fr !important;
+
+        gap: 26px !important;
+    }
+
+    #projects,
+    .projects-section {
+        padding: 38px 18px 42px !important;
+    }
+
+    #projectsGrid,
+    .projects-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 18px !important;
+    }
+
+    .project-image {
+        height: 210px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    #about,
+    .about-section,
+    .about {
+        padding:
+            30px 14px !important;
+    }
+
+    #about h2,
+    .about-section h2,
+    .about h2 {
+        font-size: 28px !important;
+    }
+
+    #about p,
+    .about-section p,
+    .about p {
+        font-size: 12px !important;
+    }
+
+
+    #projects,
+    .projects-section {
+        padding:
+            32px 14px 38px !important;
+    }
+
+    #projects h2,
+    .projects-section h2 {
+        font-size: 30px !important;
+    }
+
+
+    #projectsGrid,
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+
+        gap: 18px !important;
+    }
+
+
+    .project-image {
+        height: 220px !important;
+    }
+
+
+    .project-content {
+        padding: 16px !important;
+    }
+
+
+    .project-content h3 {
+        font-size: 17px !important;
+    }
+
+
+    .project-actions {
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 8px !important;
+    }
+
+
+    .project-actions a,
+    .project-actions button {
+        width: 100% !important;
+    }
+}
+
+
+/* Small phones */
+@media (max-width: 390px) {
+
+    .project-image {
+        height: 195px !important;
+    }
+
+    #projects h2,
+    .projects-section h2 {
+        font-size: 27px !important;
+    }
+}
