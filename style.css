@@ -2532,3 +2532,295 @@ body:not(.light) .tool-icon.github-tool {
         gap: 18px 6px;
     }
 }
+
+/* =====================================================
+   FINAL PREMIUM SIGNATURE + SK LOGO ANIMATION
+===================================================== */
+
+
+/* =========================================
+   DATA → INSIGHT → IMPACT SIGNATURE
+========================================= */
+
+#home .impact-signature {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 34px;
+    padding-bottom: 18px;
+
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: 30px;
+    font-weight: 600;
+    font-style: italic;
+
+    color: #0d4736;
+
+    letter-spacing: 0.2px;
+
+    transform: rotate(-1deg);
+}
+
+#home .impact-signature span {
+    position: relative;
+    display: inline-block;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+#home .impact-signature span:nth-of-type(1) {
+    color: #0d4736;
+}
+
+#home .impact-signature span:nth-of-type(2) {
+    color: #0ab96f;
+}
+
+#home .impact-signature span:nth-of-type(3) {
+    color: #0a7f53;
+}
+
+#home .impact-signature i {
+    color: #0ab96f;
+
+    font-size: 14px;
+
+    transform: translateY(2px);
+}
+
+/* subtle hover animation */
+
+#home .impact-signature:hover span:nth-of-type(1) {
+    transform: translateY(-3px) rotate(-2deg);
+}
+
+#home .impact-signature:hover span:nth-of-type(2) {
+    transform: translateY(-5px) scale(1.05);
+}
+
+#home .impact-signature:hover span:nth-of-type(3) {
+    transform: translateY(-3px) rotate(2deg);
+}
+
+
+/* =========================================
+   CURVED UNDERLINE
+========================================= */
+
+#home .impact-signature-line {
+    position: relative;
+
+    width: 310px;
+    height: 18px;
+
+    margin-top: -10px;
+
+    background: transparent;
+
+    overflow: hidden;
+}
+
+#home .impact-signature-line::before {
+    content: "";
+
+    position: absolute;
+
+    left: 8px;
+    right: 8px;
+    top: 2px;
+
+    height: 22px;
+
+    border-top: 3px solid #0d8a59;
+    border-radius: 50%;
+
+    transform: rotate(-2deg);
+}
+
+#home .impact-signature-line::after {
+    content: "";
+
+    position: absolute;
+
+    left: 55px;
+    right: 35px;
+    top: 8px;
+
+    height: 16px;
+
+    border-top: 2px solid rgba(13, 138, 89, 0.48);
+    border-radius: 50%;
+
+    transform: rotate(2deg);
+}
+
+
+/* =========================================
+   SK LOGO PREMIUM ANIMATION
+========================================= */
+
+.brand-logo {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            120deg,
+            #009c5b,
+            #2be39a,
+            #0a7f53,
+            #35e8a0,
+            #009c5b
+        );
+
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    filter:
+        drop-shadow(0 5px 8px rgba(10, 160, 98, 0.12));
+
+    animation:
+        skPremiumGradient 5s linear infinite,
+        skPremiumFloat 3s ease-in-out infinite;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/* animated small dot */
+
+.brand-logo::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    right: -7px;
+    top: 0;
+
+    border-radius: 50%;
+
+    background: #0bcf79;
+
+    box-shadow:
+        0 0 0 4px rgba(11, 207, 121, 0.12),
+        0 0 10px rgba(11, 207, 121, 0.35);
+
+    animation:
+        skPremiumDot 1.5s ease-in-out infinite;
+}
+
+
+/* hover */
+
+.brand:hover .brand-logo {
+    transform:
+        translateY(-2px)
+        scale(1.08)
+        rotate(-2deg);
+
+    filter:
+        drop-shadow(0 8px 12px rgba(10, 170, 103, 0.26));
+}
+
+
+/* gradient movement */
+
+@keyframes skPremiumGradient {
+
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 300% center;
+    }
+
+}
+
+
+/* floating effect */
+
+@keyframes skPremiumFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2px);
+    }
+
+}
+
+
+/* dot pulse */
+
+@keyframes skPremiumDot {
+
+    0%,
+    100% {
+        transform: scale(0.75);
+        opacity: 0.45;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    #home .impact-signature {
+        gap: 9px;
+
+        font-size: 23px;
+    }
+
+    #home .impact-signature-line {
+        width: 250px;
+    }
+
+}
+
+@media (max-width: 420px) {
+
+    #home .impact-signature {
+        gap: 7px;
+
+        font-size: 20px;
+    }
+
+    #home .impact-signature-line {
+        width: 220px;
+    }
+
+}
