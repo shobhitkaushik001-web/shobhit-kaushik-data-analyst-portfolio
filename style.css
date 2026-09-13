@@ -3348,3 +3348,277 @@ body:not(.light) #skills .card:hover {
         grid-template-columns: 1fr !important;
     }
 }
+
+/* =====================================================
+   ABOUT ME SECTION
+===================================================== */
+
+.about-section {
+    padding: 70px 0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(236, 255, 246, 0.88),
+            rgba(255, 255, 255, 0.96)
+        );
+}
+
+.about-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 42px;
+    align-items: center;
+
+    padding: 34px;
+
+    border: 1px solid rgba(15, 120, 80, 0.12);
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    box-shadow:
+        0 18px 45px rgba(10, 90, 62, 0.08);
+}
+
+
+/* LEFT SIDE */
+
+.about-intro .eyebrow {
+    margin-bottom: 10px;
+    color: #0ab970;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2.4px;
+}
+
+.about-intro h2 {
+    margin: 0;
+
+    color: #0b3025;
+
+    font-size: 31px;
+    line-height: 1.18;
+}
+
+.about-intro h2 span {
+    color: #0bbd72;
+}
+
+.about-description {
+    max-width: 650px;
+
+    margin-top: 16px;
+
+    color: #667a72;
+
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+.about-btn {
+    margin-top: 22px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+.about-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 28px rgba(12, 190, 115, 0.18);
+}
+
+.about-btn i {
+    transition: transform 0.28s ease;
+}
+
+.about-btn:hover i {
+    transform: translateX(4px);
+}
+
+
+/* RIGHT SIDE HIGHLIGHTS */
+
+.about-highlights {
+    display: grid;
+    gap: 14px;
+}
+
+.about-highlight {
+    min-height: 86px;
+
+    padding: 16px 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    border: 1px solid rgba(15, 120, 80, 0.10);
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f0fff7
+        );
+
+    transition:
+        transform 0.28s cubic-bezier(.2,.8,.2,1),
+        border-color 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+.about-highlight:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(12, 196, 117, 0.42);
+
+    box-shadow:
+        0 14px 30px rgba(10, 95, 65, 0.10);
+}
+
+.about-highlight > i {
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #e3fff1;
+
+    color: #0abb70;
+
+    font-size: 18px;
+
+    transition:
+        transform 0.28s ease;
+}
+
+.about-highlight:hover > i {
+    transform: scale(1.10) rotate(-4deg);
+}
+
+.about-highlight strong,
+.about-highlight span {
+    display: block;
+}
+
+.about-highlight strong {
+    color: #10392c;
+
+    font-size: 12px;
+}
+
+.about-highlight span {
+    margin-top: 4px;
+
+    color: #71837c;
+
+    font-size: 9px;
+    line-height: 1.45;
+}
+
+
+/* DARK MODE */
+
+body:not(.light) .about-section {
+    background:
+        linear-gradient(
+            180deg,
+            #081710,
+            #091b14
+        );
+}
+
+body:not(.light) .about-card {
+    background: rgba(12, 31, 24, 0.94);
+
+    border-color: rgba(44, 210, 139, 0.13);
+}
+
+body:not(.light) .about-intro h2 {
+    color: #f2fff9;
+}
+
+body:not(.light) .about-description {
+    color: #9db0a7;
+}
+
+body:not(.light) .about-highlight {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(17, 42, 32, 0.95),
+            rgba(12, 31, 24, 0.95)
+        );
+
+    border-color: rgba(44, 210, 139, 0.12);
+}
+
+body:not(.light) .about-highlight strong {
+    color: #f1fff8;
+}
+
+body:not(.light) .about-highlight span {
+    color: #95a99f;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .about-card {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .about-section {
+        padding: 48px 0;
+    }
+
+    .about-card {
+        padding: 22px 18px;
+        border-radius: 18px;
+    }
+
+    .about-intro {
+        text-align: center;
+    }
+
+    .about-intro h2 {
+        font-size: 25px;
+    }
+
+    .about-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-btn {
+        justify-content: center;
+    }
+
+    .about-highlight {
+        text-align: left;
+    }
+}
