@@ -3729,3 +3729,15 @@ body.light .project-insight {
         padding: 10px 12px;
     }
 }
+
+/* Keep Key Insight label clean */
+.project-insight strong {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.project-insight {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
