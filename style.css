@@ -2854,3 +2854,40 @@ body:not(.light) #home .impact-signature-line::before {
 body:not(.light) #home .impact-signature-line::after {
     border-top-color: rgba(71, 235, 166, 0.55) !important;
 }
+
+/* ===== HERO WAVING HAND ===== */
+
+.hello span {
+    display: inline-block;
+    font-size: 1.65em;
+    margin-left: 6px;
+    vertical-align: middle;
+    transform-origin: 70% 70%;
+    animation: heroHandWave 2.2s ease-in-out infinite;
+}
+
+@keyframes heroHandWave {
+    0%, 60%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    10% {
+        transform: rotate(20deg) scale(1.08);
+    }
+
+    20% {
+        transform: rotate(-12deg) scale(1.08);
+    }
+
+    30% {
+        transform: rotate(20deg) scale(1.08);
+    }
+
+    40% {
+        transform: rotate(-8deg) scale(1.06);
+    }
+
+    50% {
+        transform: rotate(14deg) scale(1.04);
+    }
+}
