@@ -5586,3 +5586,470 @@ svg {
         font-size: 27px !important;
     }
 }
+
+/* =========================================================
+   FINAL LOWER PAGE COMPACT FIX
+   Certifications + Skills + Experience + Contact + Footer
+========================================================= */
+
+html,
+body {
+    overflow-x: hidden !important;
+}
+
+
+/* =========================================================
+   CERTIFICATIONS + TECHNICAL SKILLS
+========================================================= */
+
+#certifications,
+.certifications-section,
+.skills-certifications,
+.cert-skills-section {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+}
+
+#certifications .container,
+.certifications-section .container,
+.skills-certifications .container,
+.cert-skills-section .container {
+    width: min(1440px, calc(100% - 40px)) !important;
+    max-width: 1440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* Main two-column certification/skills layout */
+.cert-skills-grid,
+.certifications-skills-grid,
+.credentials-grid {
+    display: grid !important;
+    grid-template-columns: 1.05fr .95fr !important;
+    gap: 34px !important;
+    align-items: start !important;
+}
+
+
+/* Headings */
+#certifications h2,
+.certifications-section h2,
+.skills-certifications h2 {
+    font-size: 26px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 6px !important;
+}
+
+#certifications h3,
+.certifications-section h3,
+.skills-certifications h3 {
+    font-size: 17px !important;
+}
+
+
+/* Certification grid */
+.cert-grid,
+.certification-grid,
+.certifications-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+}
+
+
+/* Certification cards */
+.cert-card,
+.certification-card {
+    min-height: 105px !important;
+    padding: 16px 18px !important;
+    border-radius: 16px !important;
+}
+
+.cert-card h3,
+.certification-card h3 {
+    font-size: 14px !important;
+    margin-bottom: 4px !important;
+}
+
+.cert-card p,
+.certification-card p {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+}
+
+.cert-card a,
+.certification-card a {
+    font-size: 11px !important;
+}
+
+
+/* Technical skills grid */
+.skills-grid,
+.technical-skills-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+}
+
+
+/* Skill cards */
+.skill-card,
+.tech-skill-card {
+    min-height: 92px !important;
+    padding: 14px 10px !important;
+    border-radius: 15px !important;
+}
+
+.skill-card i,
+.tech-skill-card i {
+    font-size: 22px !important;
+    margin-bottom: 8px !important;
+}
+
+.skill-card h3,
+.tech-skill-card h3 {
+    font-size: 13px !important;
+    margin: 0 0 4px !important;
+}
+
+.skill-card p,
+.tech-skill-card p {
+    font-size: 9px !important;
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+   WORK EXPERIENCE
+========================================================= */
+
+#experience,
+.experience-section,
+.work-experience {
+    padding-top: 42px !important;
+    padding-bottom: 44px !important;
+}
+
+#experience .container,
+.experience-section .container,
+.work-experience .container {
+    width: min(1440px, calc(100% - 40px)) !important;
+    max-width: 1440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* eyebrow */
+#experience .eyebrow,
+.experience-section .eyebrow {
+    margin-bottom: 8px !important;
+}
+
+
+/* Main heading */
+#experience h2,
+.experience-section h2,
+.work-experience h2 {
+    font-size: clamp(32px, 3vw, 42px) !important;
+    line-height: 1.05 !important;
+    margin-bottom: 24px !important;
+}
+
+
+/* Timeline */
+.timeline,
+.experience-timeline {
+    gap: 14px !important;
+}
+
+
+/* Experience card */
+.timeline-item,
+.experience-card,
+.experience-item {
+    min-height: auto !important;
+    padding: 18px 20px !important;
+    margin-bottom: 14px !important;
+    border-radius: 16px !important;
+}
+
+
+/* Role title */
+.timeline-item h3,
+.experience-card h3,
+.experience-item h3 {
+    font-size: 16px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 5px !important;
+}
+
+
+/* Company */
+.timeline-item h4,
+.experience-card h4,
+.experience-company {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+}
+
+
+/* Description */
+.timeline-item p,
+.experience-card p,
+.experience-item p {
+    font-size: 11px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 0 !important;
+}
+
+
+/* Date */
+.experience-date,
+.timeline-date {
+    font-size: 9px !important;
+    white-space: nowrap !important;
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+#contact,
+.contact-section {
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
+}
+
+#contact .container,
+.contact-section .container {
+    width: min(1440px, calc(100% - 40px)) !important;
+    max-width: 1440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* Contact two-column layout */
+.contact-grid,
+.contact-layout {
+    display: grid !important;
+    grid-template-columns: .9fr 1.1fr !important;
+    gap: 48px !important;
+    align-items: center !important;
+}
+
+
+/* Contact heading */
+#contact h2,
+.contact-section h2 {
+    font-size: clamp(32px, 3vw, 44px) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 12px !important;
+}
+
+
+/* Contact intro */
+#contact p,
+.contact-section p {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+}
+
+
+/* Contact cards grid */
+.contact-cards,
+.contact-links {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+}
+
+
+/* Individual contact card */
+.contact-card,
+.contact-link-card {
+    min-height: 72px !important;
+    padding: 13px 16px !important;
+    border-radius: 14px !important;
+}
+
+.contact-card i,
+.contact-link-card i {
+    font-size: 17px !important;
+}
+
+.contact-card strong,
+.contact-link-card strong {
+    font-size: 11px !important;
+}
+
+.contact-card small,
+.contact-link-card small {
+    font-size: 8px !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer,
+.site-footer {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+}
+
+footer .container,
+.site-footer .container {
+    width: min(1440px, calc(100% - 40px)) !important;
+    max-width: 1440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* Footer content */
+.footer-grid,
+.footer-content {
+    min-height: auto !important;
+    align-items: center !important;
+    gap: 24px !important;
+}
+
+footer p,
+.site-footer p {
+    font-size: 10px !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .cert-skills-grid,
+    .certifications-skills-grid,
+    .credentials-grid {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+    }
+
+    .skills-grid,
+    .technical-skills-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+
+    .contact-grid,
+    .contact-layout {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    #certifications,
+    .certifications-section,
+    .skills-certifications,
+    #experience,
+    .experience-section,
+    #contact,
+    .contact-section {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+
+    /* Certifications */
+    .cert-grid,
+    .certification-grid,
+    .certifications-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+
+    /* Skills */
+    .skills-grid,
+    .technical-skills-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 10px !important;
+    }
+
+
+    .skill-card,
+    .tech-skill-card {
+        min-height: 86px !important;
+    }
+
+
+    /* Experience */
+    #experience h2,
+    .experience-section h2 {
+        font-size: 30px !important;
+    }
+
+    .timeline-item,
+    .experience-card,
+    .experience-item {
+        padding: 16px !important;
+    }
+
+    .experience-date,
+    .timeline-date {
+        position: static !important;
+        display: block !important;
+        margin-top: 8px !important;
+    }
+
+
+    /* Contact */
+    #contact h2,
+    .contact-section h2 {
+        font-size: 30px !important;
+    }
+
+    .contact-cards,
+    .contact-links {
+        grid-template-columns: 1fr !important;
+    }
+
+
+    /* Footer */
+    .footer-grid,
+    .footer-content {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .skills-grid,
+    .technical-skills-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .cert-card,
+    .certification-card {
+        padding: 14px !important;
+    }
+}
