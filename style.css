@@ -3622,3 +3622,110 @@ body:not(.light) .about-highlight span {
         text-align: left;
     }
 }
+
+/* ===== PROJECT KEY INSIGHT ===== */
+
+.project-insight {
+    margin: 12px 0 14px;
+    padding: 10px 12px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    border: 1px solid rgba(13, 190, 111, 0.18);
+    border-radius: 11px;
+
+    background: rgba(232, 255, 244, 0.72);
+
+    color: #45665a;
+
+    font-size: 10px;
+    line-height: 1.55;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-insight i {
+    margin-top: 2px;
+    color: #0abb70;
+    font-size: 13px;
+}
+
+.project-insight b {
+    color: #0d4c38;
+}
+
+.project-card:hover .project-insight {
+    transform: translateY(-2px);
+    border-color: rgba(13, 190, 111, 0.38);
+
+    box-shadow:
+        0 8px 18px rgba(12, 100, 70, 0.07);
+}
+
+/* DARK MODE */
+
+body:not(.light) .project-insight {
+    background: rgba(16, 44, 33, 0.88);
+    border-color: rgba(54, 220, 147, 0.17);
+    color: #a7bbb2;
+}
+
+body:not(.light) .project-insight b {
+    color: #7ef0bd;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .project-insight {
+        font-size: 9px;
+        padding: 9px 10px;
+    }
+}
+
+/* ===== PROJECT KEY INSIGHT ===== */
+
+.project-insight {
+    margin: 12px 0 14px;
+    padding: 11px 13px;
+    background: rgba(16, 185, 129, 0.07);
+    border-left: 3px solid #10b981;
+    border-radius: 8px;
+    font-size: 11px;
+    line-height: 1.55;
+    color: var(--text);
+    transition: transform 0.25s ease, box-shadow 0.25s ease,
+                background 0.25s ease;
+}
+
+.project-insight i {
+    color: #10b981;
+    margin-right: 6px;
+}
+
+.project-insight strong {
+    font-weight: 700;
+}
+
+.project-card:hover .project-insight {
+    transform: translateX(3px);
+    background: rgba(16, 185, 129, 0.11);
+}
+
+/* Light theme */
+body.light .project-insight {
+    background: rgba(16, 185, 129, 0.06);
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+    .project-insight {
+        font-size: 11px;
+        padding: 10px 12px;
+    }
+}

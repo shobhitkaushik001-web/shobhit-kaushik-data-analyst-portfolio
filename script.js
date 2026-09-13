@@ -5,6 +5,7 @@ const projects = {
     image: "assets/starbucks-dashboard-1.png",
     images: ["assets/starbucks-dashboard-1.png","assets/starbucks-dashboard-2.png"],
     desc: "Sales trends, product performance, customer behavior and regional analysis.",
+    insight: "Identified sales patterns across products, categories and regions to support revenue-focused decisions.",
     tags: ["Power BI","Excel","DAX"],
     badge: "☕ Starbucks",
     repo: "https://github.com/shobhitkaushik001-web?tab=repositories&q=starbucks"
@@ -14,6 +15,7 @@ const projects = {
     image: "assets/spotify-dashboard.png",
     images: ["assets/spotify-dashboard.png"],
     desc: "Streaming trends, top artists, genres, countries, devices and listener behavior analysis.",
+    insight: "Discovered user preferences and listening habits to inform content curation and marketing strategies.",
     tags: ["Power BI","Data Cleaning","DAX"],
     badge: "<i class='fa-brands fa-spotify'></i> Spotify",
     repo: "https://github.com/shobhitkaushik001-web?tab=repositories&q=spotify"
@@ -23,6 +25,7 @@ const projects = {
     image: "assets/amazon-dashboard.png",
     images: ["assets/amazon-dashboard.png"],
     desc: "End-to-end analysis using MySQL and Power BI with interactive dashboards.",
+    insight: "Analyzed revenue, orders, profitability and regional performance to identify growth opportunities and support business decisions.",
     tags: ["MySQL","Power BI","Data Modeling"],
     badge: "a→ Amazon",
     repo: "https://github.com/shobhitkaushik001-web?tab=repositories&q=amazon"
@@ -32,6 +35,7 @@ const projects = {
     image: "assets/netflix-dashboard-1.png",
     images: ["assets/netflix-dashboard-1.png","assets/netflix-dashboard-2.png"],
     desc: "Content, subscription and revenue analytics with interactive Power BI reporting.",
+    insight: "Analyzed content, subscription and revenue trends to uncover audience preferences and support data-driven content decisions.",
     tags: ["Power BI","DAX","Power Query"],
     badge: "N Netflix",
     repo: "https://github.com/shobhitkaushik001-web?tab=repositories&q=netflix"
@@ -41,6 +45,7 @@ const projects = {
     image: "assets/airbnb-dashboard.png",
     images: ["assets/airbnb-dashboard.png"],
     desc: "Market performance, pricing, room type and city-wise revenue analysis.",
+    insight: "Analyzed booking trends, pricing, room types and city-wise revenue to identify high-performing markets and growth opportunities.",
     tags: ["Tableau","Data Visualization","Market Analysis"],
     badge: "<i class='fa-brands fa-airbnb'></i> Airbnb",
     repo: "https://github.com/shobhitkaushik001-web?tab=repositories&q=airbnb"
@@ -61,7 +66,10 @@ document.getElementById("projectsGrid").innerHTML = order.map(id => {
       <div class="project-content">
         <h3>${p.title}</h3>
         <p>${p.desc}</p>
-
+<div class="project-insight">
+    <i class="fa-solid fa-lightbulb"></i>
+    <strong>Key Insight:</strong> ${p.insight}
+</div>
         <div class="tags">
           ${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}
         </div>
