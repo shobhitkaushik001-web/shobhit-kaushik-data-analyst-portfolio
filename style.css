@@ -4441,3 +4441,186 @@ footer {
         font-size: 7.5px !important;
     }
 }
+
+/* =====================================================
+   FINAL RESPONSIVE HEADER FIX
+   Android + iPhone + iPad + Tablet
+===================================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+    .nav-wrap {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    #nav {
+        display: none !important;
+    }
+
+    .brand,
+    .nav-actions,
+    .google-badge {
+        min-width: 0 !important;
+    }
+}
+
+
+/* PHONES - Android + All iPhones */
+@media (max-width: 600px) {
+
+    .topbar {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .topbar .container.nav-wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns: minmax(0, 1fr) auto !important;
+
+        grid-template-areas:
+            "brand theme"
+            "certificate certificate";
+
+        align-items: center !important;
+
+        gap: 8px 10px !important;
+
+        padding: 8px 12px !important;
+    }
+
+
+    /* Name / SK */
+    .brand {
+        grid-area: brand !important;
+
+        width: auto !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+    }
+
+
+    /* IMPORTANT:
+       allows theme + certificate to act as grid items */
+    .nav-actions {
+        display: contents !important;
+    }
+
+
+    /* Theme button */
+    #themeToggle {
+        grid-area: theme !important;
+
+        width: 38px !important;
+        height: 38px !important;
+
+        min-width: 38px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        justify-self: end !important;
+    }
+
+
+    /* Google Certificate - full second row */
+    .google-badge {
+        grid-area: certificate !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        height: auto !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 8px !important;
+
+        padding: 7px 10px !important;
+        margin: 0 !important;
+
+        overflow: hidden !important;
+
+        border-radius: 12px !important;
+    }
+
+
+    .google-cert-logo {
+        width: 25px !important;
+        height: 25px !important;
+
+        min-width: 25px !important;
+
+        object-fit: contain !important;
+
+        margin: 0 !important;
+    }
+
+
+    .google-cert-copy {
+        display: block !important;
+
+        min-width: 0 !important;
+        max-width: calc(100% - 38px) !important;
+    }
+
+
+    .google-cert-copy b {
+        display: block !important;
+
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    .google-cert-copy small {
+        display: block !important;
+
+        font-size: 8px !important;
+        line-height: 1.25 !important;
+
+        white-space: normal !important;
+
+        overflow: visible !important;
+        text-overflow: unset !important;
+    }
+}
+
+
+/* Very small Android / iPhone SE */
+@media (max-width: 375px) {
+
+    .topbar .container.nav-wrap {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .brand-copy strong {
+        font-size: 11px !important;
+    }
+
+    .brand-copy small {
+        font-size: 8px !important;
+    }
+
+    .google-cert-copy b {
+        font-size: 10px !important;
+    }
+
+    .google-cert-copy small {
+        font-size: 7.5px !important;
+    }
+}
