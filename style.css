@@ -3766,3 +3766,110 @@ body.light .project-insight {
     font-size: 11px;
     line-height: 1.55;
 }
+
+/* =====================================================
+   RESPONSIVE PROJECT LOGO BADGES
+===================================================== */
+
+.project-image {
+    position: relative;
+}
+
+/* Logo badge */
+.project-logo-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.98);
+    border: 2px solid rgba(255, 255, 255, 0.95);
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.16);
+
+    z-index: 10;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+/* Actual logo */
+.project-logo-badge img {
+    width: 76% !important;
+    height: 76% !important;
+
+    object-fit: contain !important;
+
+    display: block;
+
+    transform: none !important;
+    filter: none !important;
+}
+
+/* Hover effect */
+.project-card:hover .project-logo-badge {
+    transform: translateY(-3px) scale(1.08);
+
+    box-shadow:
+        0 11px 24px rgba(0, 0, 0, 0.20);
+}
+
+/* Prevent main image hover rules from affecting logo */
+.project-card:hover .project-logo-badge img {
+    transform: none !important;
+    filter: none !important;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .project-logo-badge {
+        width: 42px;
+        height: 42px;
+
+        top: 10px;
+        left: 10px;
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .project-logo-badge {
+        width: 38px;
+        height: 38px;
+
+        top: 8px;
+        left: 8px;
+    }
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 420px) {
+
+    .project-logo-badge {
+        width: 34px;
+        height: 34px;
+
+        top: 7px;
+        left: 7px;
+    }
+}

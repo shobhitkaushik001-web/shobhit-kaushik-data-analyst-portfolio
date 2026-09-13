@@ -3,6 +3,7 @@ const projects = {
   starbucks: {
     title: "Starbucks Sales Dashboard",
     image: "assets/starbucks-dashboard-1.png",
+    logo: "assets/starbucks-logo.png",
     images: ["assets/starbucks-dashboard-1.png","assets/starbucks-dashboard-2.png"],
     desc: "Sales trends, product performance, customer behavior and regional analysis.",
     insight: "Identified sales patterns across products, categories and regions to support revenue-focused decisions.",
@@ -12,6 +13,7 @@ const projects = {
   },
   spotify: {
     title: "Spotify Music Analytics",
+    logo: "assets/spotify-logo.png",
     image: "assets/spotify-dashboard.png",
     images: ["assets/spotify-dashboard.png"],
     desc: "Streaming trends, top artists, genres, countries, devices and listener behavior analysis.",
@@ -21,6 +23,7 @@ const projects = {
     repo: "https://github.com/shobhitkaushik001-web?tab=repositories&q=spotify"
   },
   amazon: {
+    logo: "assets/amazon-logo.png",
     title: "Amazon E-Commerce Analysis",
     image: "assets/amazon-dashboard.png",
     images: ["assets/amazon-dashboard.png"],
@@ -33,6 +36,7 @@ const projects = {
   netflix: {
     title: "Netflix Content Analytics",
     image: "assets/netflix-dashboard-1.png",
+    logo: "assets/netflix-logo.png",
     images: ["assets/netflix-dashboard-1.png","assets/netflix-dashboard-2.png"],
     desc: "Content, subscription and revenue analytics with interactive Power BI reporting.",
     insight: "Analyzed content, subscription and revenue trends to uncover audience preferences and support data-driven content decisions.",
@@ -42,6 +46,7 @@ const projects = {
   },
   airbnb: {
     title: "Airbnb India Analysis",
+    logo: "assets/airbnb-logo.png",
     image: "assets/airbnb-dashboard.png",
     images: ["assets/airbnb-dashboard.png"],
     desc: "Market performance, pricing, room type and city-wise revenue analysis.",
@@ -59,9 +64,12 @@ document.getElementById("projectsGrid").innerHTML = order.map(id => {
   return `
     <article class="project-card">
       <div class="project-image">
-        <img src="${p.image}" alt="${p.title}">
-        <div class="project-badge">${p.badge}</div>
-      </div>
+    <img src="${p.image}" alt="${p.title}">
+
+    <div class="project-logo-badge">
+        <img src="${p.logo}" alt="${p.title} logo">
+    </div>
+</div>
 
       <div class="project-content">
         <h3>${p.title}</h3>
