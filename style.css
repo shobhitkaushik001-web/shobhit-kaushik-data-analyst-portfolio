@@ -4164,3 +4164,280 @@ body {
         margin: 0 !important;
     }
 }
+
+/* =====================================================
+   FINAL RESPONSIVE OVERFLOW FIX
+   iPhone / Android / iPad / Tablet
+===================================================== */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden !important;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+    max-width: 100%;
+}
+
+/* Never allow main sections to exceed screen */
+header,
+main,
+section,
+footer {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Containers */
+.container,
+.header-container,
+.nav-container,
+.hero-container,
+.hero-grid,
+.projects-grid,
+#projectsGrid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0 !important;
+}
+
+
+/* =====================================================
+   TABLET / IPAD
+===================================================== */
+
+@media (max-width: 1024px) {
+
+    header,
+    .site-header {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    #projectsGrid,
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .project-card,
+    .hero-left,
+    .hero-center,
+    .hero-right {
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+}
+
+
+/* =====================================================
+   PHONE HEADER
+   iPhone + Android
+===================================================== */
+
+@media (max-width: 600px) {
+
+    header,
+    .site-header {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        overflow: hidden !important;
+    }
+
+    /* Allow header content to wrap instead of going off-screen */
+    header .container,
+    .site-header .container,
+    .header-container,
+    .nav-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        display: flex !important;
+        flex-wrap: wrap !important;
+
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        gap: 8px !important;
+    }
+
+    /* Google certificate goes to its own clean row */
+    .google-badge {
+        order: 20 !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        height: auto !important;
+
+        padding: 7px 10px !important;
+        margin: 2px 0 4px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 7px !important;
+
+        white-space: normal !important;
+        overflow: hidden !important;
+    }
+
+    /* Bring certificate text back */
+    .google-badge > span {
+        display: block !important;
+        min-width: 0 !important;
+    }
+
+    .google-badge b {
+        display: block !important;
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+    }
+
+    .google-badge small {
+        display: block !important;
+        max-width: none !important;
+
+        font-size: 8px !important;
+        line-height: 1.2 !important;
+
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+    }
+
+    .google-badge img,
+    .google-cert-logo {
+        width: 23px !important;
+        height: 23px !important;
+        min-width: 23px !important;
+
+        object-fit: contain !important;
+    }
+
+    /* Certificate check icon */
+    .google-badge > i {
+        display: inline-block !important;
+        flex-shrink: 0 !important;
+    }
+
+
+    /* HERO */
+
+    .hero,
+    .hero-grid,
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        grid-template-columns: 1fr !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .hero-left,
+    .hero-center,
+    .hero-right {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+
+    /* PROJECTS */
+
+    #projectsGrid,
+    .projects-grid {
+        width: 100% !important;
+
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    .project-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .project-image {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .project-image > img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    .project-content {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+
+    /* BUTTONS */
+
+    .project-actions,
+    .hero-actions {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .project-actions button,
+    .project-actions a {
+        max-width: 100% !important;
+    }
+
+
+    /* SECTIONS */
+
+    section {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+
+        overflow: hidden;
+    }
+}
+
+
+/* Extra-small phones */
+@media (max-width: 390px) {
+
+    section {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    .google-badge b {
+        font-size: 10px !important;
+    }
+
+    .google-badge small {
+        font-size: 7.5px !important;
+    }
+}
