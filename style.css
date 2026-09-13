@@ -4624,3 +4624,560 @@ footer {
         font-size: 7.5px !important;
     }
 }
+
+/* =========================================================
+   FINAL DESKTOP + TABLET + MOBILE RESPONSIVE FIX
+   Compact hero + no header cut + no horizontal overflow
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden !important;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+svg {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   DESKTOP HEADER
+========================================================= */
+
+.topbar {
+    width: 100%;
+}
+
+.topbar .nav-wrap {
+    width: min(1440px, calc(100% - 32px)) !important;
+    max-width: 1440px !important;
+    margin: 0 auto !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    gap: 18px !important;
+    min-width: 0 !important;
+}
+
+.brand {
+    flex-shrink: 0 !important;
+}
+
+#nav {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 24px !important;
+    flex: 1 1 auto !important;
+
+    min-width: 0 !important;
+}
+
+#nav a {
+    font-size: 13px !important;
+    white-space: nowrap !important;
+}
+
+.nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex-shrink: 0 !important;
+}
+
+.google-badge {
+    max-width: 235px !important;
+    min-width: 0 !important;
+
+    padding: 7px 10px !important;
+}
+
+.google-cert-logo {
+    width: 28px !important;
+    height: 28px !important;
+    flex-shrink: 0 !important;
+}
+
+.google-cert-copy {
+    min-width: 0 !important;
+}
+
+.google-cert-copy b {
+    font-size: 11px !important;
+    white-space: nowrap !important;
+}
+
+.google-cert-copy small {
+    font-size: 7px !important;
+    white-space: nowrap !important;
+}
+
+
+/* =========================================================
+   DESKTOP HERO - COMPACT VERSION
+========================================================= */
+
+.hero {
+    padding: 26px 0 20px !important;
+    min-height: auto !important;
+}
+
+.hero-layout {
+    width: min(1440px, calc(100% - 32px)) !important;
+    max-width: 1440px !important;
+
+    margin: 0 auto !important;
+
+    display: grid !important;
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(300px, .72fr)
+        minmax(0, 1fr) !important;
+
+    gap: 42px !important;
+    align-items: center !important;
+}
+
+
+/* LEFT SIDE */
+
+.hero-left {
+    min-width: 0 !important;
+}
+
+.hero-left h1 {
+    font-size: clamp(42px, 4vw, 58px) !important;
+    line-height: .98 !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+}
+
+.hero-left .hello,
+.hello {
+    font-size: 16px !important;
+    margin-bottom: 12px !important;
+}
+
+.hero-left p {
+    max-width: 500px !important;
+}
+
+
+/* CENTER PROFILE */
+
+.hero-center {
+    width: 100% !important;
+    max-width: 360px !important;
+
+    margin: 0 auto !important;
+
+    transform: scale(.90);
+    transform-origin: center;
+}
+
+
+/* RIGHT SIDE */
+
+.hero-right {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    min-width: 0 !important;
+}
+
+.hero-right > * {
+    max-width: 100% !important;
+}
+
+
+/* Slightly reduce right-side cards */
+.hero-right .card,
+.hero-right [class*="card"] {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+}
+
+
+/* =========================================================
+   LARGE LAPTOP / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1280px) {
+
+    .topbar .nav-wrap,
+    .hero-layout {
+        width: min(1180px, calc(100% - 28px)) !important;
+    }
+
+    #nav {
+        gap: 16px !important;
+    }
+
+    #nav a {
+        font-size: 12px !important;
+    }
+
+    .google-badge {
+        max-width: 205px !important;
+    }
+
+    .hero-layout {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(260px, .72fr)
+            minmax(0, 1fr) !important;
+
+        gap: 28px !important;
+    }
+
+    .hero-center {
+        max-width: 320px !important;
+    }
+
+    .hero-left h1 {
+        font-size: clamp(40px, 4vw, 54px) !important;
+    }
+}
+
+
+/* =========================================================
+   TABLET / IPAD
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .topbar .nav-wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        padding: 8px 14px !important;
+
+        display: grid !important;
+
+        grid-template-columns: minmax(0, 1fr) auto !important;
+        grid-template-areas:
+            "brand actions"
+            "nav nav";
+
+        gap: 8px 12px !important;
+    }
+
+    .brand {
+        grid-area: brand !important;
+    }
+
+    .nav-actions {
+        grid-area: actions !important;
+        justify-self: end !important;
+    }
+
+    #nav {
+        grid-area: nav !important;
+
+        width: 100% !important;
+
+        display: flex !important;
+        flex-wrap: wrap !important;
+
+        justify-content: center !important;
+
+        gap: 8px 18px !important;
+
+        padding-top: 5px !important;
+    }
+
+    #nav a {
+        font-size: 11px !important;
+    }
+
+    .google-badge {
+        max-width: 195px !important;
+    }
+
+
+    /* Hero becomes one column */
+    .hero {
+        padding: 24px 16px !important;
+    }
+
+    .hero-layout {
+        width: 100% !important;
+        max-width: 760px !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 24px !important;
+
+        text-align: center !important;
+    }
+
+    .hero-left,
+    .hero-center,
+    .hero-right {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+    }
+
+    .hero-center {
+        max-width: 310px !important;
+
+        order: -1 !important;
+
+        transform: none !important;
+    }
+
+    .hero-left p {
+        max-width: 620px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .hero-actions {
+        justify-content: center !important;
+    }
+
+    .hero-right {
+        max-width: 680px !important;
+        margin: 0 auto !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .topbar {
+        overflow: hidden !important;
+    }
+
+    .topbar .nav-wrap {
+        width: 100% !important;
+
+        padding: 8px 12px !important;
+
+        grid-template-columns: minmax(0, 1fr) auto !important;
+
+        grid-template-areas:
+            "brand theme"
+            "certificate certificate"
+            "nav nav" !important;
+
+        gap: 8px !important;
+    }
+
+
+    .brand {
+        grid-area: brand !important;
+
+        min-width: 0 !important;
+    }
+
+    .brand-logo {
+        flex-shrink: 0 !important;
+    }
+
+    .brand-copy {
+        min-width: 0 !important;
+    }
+
+    .brand-copy strong {
+        font-size: 11px !important;
+    }
+
+    .brand-copy small {
+        font-size: 8px !important;
+    }
+
+
+    .nav-actions {
+        display: contents !important;
+    }
+
+
+    #themeToggle {
+        grid-area: theme !important;
+
+        width: 38px !important;
+        height: 38px !important;
+
+        justify-self: end !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+
+    .google-badge {
+        grid-area: certificate !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        padding: 7px 10px !important;
+
+        margin: 0 !important;
+
+        overflow: hidden !important;
+    }
+
+    .google-cert-logo {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    .google-cert-copy b {
+        font-size: 10px !important;
+    }
+
+    .google-cert-copy small {
+        font-size: 7.5px !important;
+
+        white-space: normal !important;
+    }
+
+
+    /* Navigation visible, never cut */
+    #nav {
+        grid-area: nav !important;
+
+        width: 100% !important;
+
+        display: flex !important;
+        flex-wrap: wrap !important;
+
+        justify-content: center !important;
+
+        gap: 6px 14px !important;
+
+        padding: 5px 0 2px !important;
+    }
+
+    #nav a {
+        font-size: 10px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* HERO */
+    .hero {
+        width: 100% !important;
+
+        padding: 20px 14px 18px !important;
+
+        overflow: hidden !important;
+    }
+
+    .hero-layout {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 20px !important;
+
+        margin: 0 !important;
+    }
+
+    .hero-center {
+        max-width: 255px !important;
+
+        margin: 0 auto !important;
+
+        transform: none !important;
+    }
+
+    .hero-left h1 {
+        font-size: clamp(36px, 12vw, 48px) !important;
+
+        line-height: .98 !important;
+    }
+
+    .hero-left .hello,
+    .hello {
+        font-size: 13px !important;
+    }
+
+    .hero-left p {
+        width: 100% !important;
+
+        font-size: 12px !important;
+
+        line-height: 1.6 !important;
+    }
+
+    .hero-right {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 auto !important;
+    }
+
+
+    .hero-actions {
+        width: 100% !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+
+        gap: 9px !important;
+    }
+
+    .hero-actions a,
+    .hero-actions button {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .topbar .nav-wrap {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    #nav {
+        gap: 6px 11px !important;
+    }
+
+    #nav a {
+        font-size: 9.5px !important;
+    }
+
+    .hero-center {
+        max-width: 230px !important;
+    }
+
+    .hero-left h1 {
+        font-size: 38px !important;
+    }
+}
