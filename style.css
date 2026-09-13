@@ -2824,3 +2824,33 @@ body:not(.light) .tool-icon.github-tool {
     }
 
 }
+
+/* ===== DARK MODE SIGNATURE FIX ===== */
+
+body:not(.light) #home .impact-signature {
+    color: #dfffee !important;
+}
+
+body:not(.light) #home .impact-signature span:nth-of-type(1) {
+    color: #ffffff !important;
+}
+
+body:not(.light) #home .impact-signature span:nth-of-type(2) {
+    color: #32e79f !important;
+}
+
+body:not(.light) #home .impact-signature span:nth-of-type(3) {
+    color: #8af5c6 !important;
+}
+
+body:not(.light) #home .impact-signature i {
+    color: #35e79f !important;
+}
+
+body:not(.light) #home .impact-signature-line::before {
+    border-top-color: #26d98f !important;
+}
+
+body:not(.light) #home .impact-signature-line::after {
+    border-top-color: rgba(71, 235, 166, 0.55) !important;
+}
