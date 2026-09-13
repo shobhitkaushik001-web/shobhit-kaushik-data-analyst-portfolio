@@ -3160,3 +3160,191 @@ body:not(.light) .google-cert-copy small {
         transition: none !important;
     }
 }
+
+/* ===== CERTIFICATIONS + TECHNICAL SKILLS HOVER FLOAT ===== */
+
+/* Certification cards */
+.cert-card,
+.certification-card,
+#certifications .card {
+    transition:
+        transform 0.28s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.28s ease,
+        border-color 0.28s ease !important;
+}
+
+.cert-card:hover,
+.certification-card:hover,
+#certifications .card:hover {
+    transform: translateY(-7px) scale(1.015) !important;
+    border-color: rgba(18, 200, 125, 0.45) !important;
+    box-shadow:
+        0 16px 34px rgba(12, 90, 62, 0.13) !important;
+}
+
+
+/* Technical skill cards */
+.skill-card,
+.skills-grid .card,
+#skills .card {
+    transition:
+        transform 0.28s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.28s ease,
+        border-color 0.28s ease !important;
+}
+
+.skill-card:hover,
+.skills-grid .card:hover,
+#skills .card:hover {
+    transform: translateY(-7px) scale(1.02) !important;
+    border-color: rgba(18, 200, 125, 0.45) !important;
+    box-shadow:
+        0 16px 34px rgba(12, 90, 62, 0.13) !important;
+}
+
+
+/* Icon animation inside cards */
+.cert-card i,
+.certification-card i,
+.skill-card i,
+#certifications .card i,
+#skills .card i {
+    transition:
+        transform 0.28s ease,
+        filter 0.28s ease !important;
+}
+
+.cert-card:hover i,
+.certification-card:hover i,
+.skill-card:hover i,
+#certifications .card:hover i,
+#skills .card:hover i {
+    transform: translateY(-2px) scale(1.12) rotate(-3deg) !important;
+    filter: drop-shadow(0 5px 8px rgba(12, 190, 115, 0.18));
+}
+
+
+/* View Certificate link hover */
+.cert-card a,
+.certification-card a,
+#certifications .card a {
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease !important;
+}
+
+.cert-card a:hover,
+.certification-card a:hover,
+#certifications .card a:hover {
+    transform: translateX(3px);
+}
+
+
+/* Dark mode */
+body:not(.light) .cert-card:hover,
+body:not(.light) .certification-card:hover,
+body:not(.light) .skill-card:hover,
+body:not(.light) #certifications .card:hover,
+body:not(.light) #skills .card:hover {
+    border-color: rgba(57, 232, 158, 0.45) !important;
+
+    box-shadow:
+        0 16px 34px rgba(0, 0, 0, 0.28),
+        0 0 0 1px rgba(57, 232, 158, 0.08) !important;
+}
+
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .cert-card,
+    .certification-card,
+    .skill-card,
+    #certifications .card,
+    #skills .card {
+        transition: none !important;
+    }
+
+}
+
+/* ===== PROJECT DASHBOARD IMAGE CLARITY FIX ===== */
+
+.project-image {
+    width: 100%;
+    height: 260px !important;
+    overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px 14px 0 0;
+    position: relative;
+}
+
+.project-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center;
+    display: block;
+
+    /* Better image rendering */
+    image-rendering: auto;
+    backface-visibility: hidden;
+
+    /* Smooth zoom */
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+/* Dashboard zoom on hover */
+.project-card:hover .project-image img {
+    transform: scale(1.08);
+    filter: contrast(1.04) saturate(1.04);
+}
+
+/* Card premium hover */
+.project-card {
+    overflow: hidden;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.13);
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .project-image {
+        height: 280px !important;
+    }
+}
+
+/* Mobile - image ko aur readable rakho */
+@media (max-width: 650px) {
+    .project-image {
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-image img {
+        object-fit: contain !important;
+    }
+}
+
+/* ===== LARGER PROJECT CARDS FOR DASHBOARD READABILITY ===== */
+
+.projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 26px !important;
+}
+
+@media (max-width: 700px) {
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
