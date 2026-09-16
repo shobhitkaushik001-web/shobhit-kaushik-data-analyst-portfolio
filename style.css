@@ -236,7 +236,58 @@ nav a:hover:after{right:0}
 .project-actions .view-dashboard{
   background:linear-gradient(135deg,var(--green),#39f09a);color:#04120b;border-color:transparent
 }
+.project-insight {
+    margin: 12px 0;
+    padding: 10px 12px;
+    border: 1px solid rgba(57, 240, 154, 0.35);
+    border-left: 3px solid var(--green);
+    border-radius: 8px;
+    background: rgba(57, 240, 154, 0.06);
 
+    display: grid;
+    grid-template-columns: 14px max-content minmax(0, 1fr);
+    align-items: start;
+    column-gap: 7px;
+}
+
+.project-insight-icon {
+    color: var(--green);
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 1px;
+}
+
+.project-insight strong {
+    color: var(--green);
+    font-size: 10px;
+    line-height: 1.5;
+    white-space: nowrap;
+    display: block;
+}
+
+.project-insight > span {
+    min-width: 0;
+    font-size: 10px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.project-insight > span {
+    flex: 1;
+    min-width: 0;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.project-insight span {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.project-insight i {
+  font-size: 10px;
+}
 .credentials-skills{background:var(--bg)}
 .lower-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}
 .mini-heading{display:flex;align-items:center;gap:10px;margin-bottom:15px}

@@ -207,7 +207,7 @@ nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.cla
   if(!cfg.SUPABASE_URL || cfg.SUPABASE_URL.includes('YOUR_PROJECT') || !cfg.SUPABASE_ANON_KEY || cfg.SUPABASE_ANON_KEY.includes('YOUR_')) return;
   try{
     const sb=window.supabase.createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY);
-    const {data,error}=await sb.from('projects').select('id,title,description,github_url,project_type,tools,image_url,created_at').eq('is_published',true).order('created_at',{ascending:false});
+    const {data,error}=await sb.from('projects').select('id,title,description,github_url,project_type,tools,image_url,key_insight,logo_url,created_at').eq('is_published',true).order('created_at',{ascending:false});
     if(error) throw error;
     if(!data?.length) return;
     const grid=document.getElementById('projectsGrid');
@@ -215,7 +215,22 @@ nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.cla
     const cards=data.map(p=>{
       const tools=Array.isArray(p.tools)?p.tools:[];
       const image=p.image_url?`<img src="${esc(p.image_url)}" alt="${esc(p.title)}">`:`<div style="height:100%;display:grid;place-items:center;background:linear-gradient(135deg,#071711,#10372a);color:#fff;text-align:center;padding:20px"><div><i class="fa-brands fa-github" style="font-size:44px;color:#39f09a"></i><b style="display:block;margin-top:10px">${esc(p.title)}</b></div></div>`;
-      return `<article class="project-card"><div class="project-image">${image}<div class="project-badge remote-project-badge"><i class="fa-solid fa-chart-line"></i> Portfolio Project</div></div><div class="project-content"><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p><div class="tags">${tools.slice(0,4).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><div class="project-actions"><a class="view-dashboard" href="${esc(p.github_url)}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Open Project</a><a href="${esc(p.github_url)}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Repository</a></div><div class="project-status">Published from secure admin panel</div></div></article>`;
+      return `<article class="project-card">
+  <div class="project-image">
+    ${image}
+    ${p.logo_url ? `<div class="project-logo-badge"><img src="${esc(p.logo_url)}" alt="${esc(p.title)} logo"></div>` : ''}
+  </div>
+  <div class="project-content">
+    <h3>${esc(p.title)}</h3>
+    <p>${esc(p.description)}</p>
+    ${p.key_insight ? `<div class="project-insight"><i class="fa-solid fa-lightbulb project-insight-icon"></i><strong>Key Insight:</strong><span>${esc(p.key_insight)}</span></div>` : ''}
+    <div class="tags">${tools.slice(0,4).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+    <div class="project-actions">
+      <a class="view-dashboard" href="${esc(p.github_url)}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Dashboard</a>
+      <a href="${esc(p.github_url)}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+  </div>
+</article>`;
     }).join('');
     grid.insertAdjacentHTML('beforeend',cards);
   }catch(e){console.warn('Secure projects could not be loaded:',e.message)}
