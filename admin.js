@@ -11,12 +11,118 @@ if(configured) warning.hidden=true;
 const sb=configured?window.supabase.createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY):null;
 const loginView=document.getElementById('loginView'),adminView=document.getElementById('adminView');
 const loginForm=document.getElementById('loginForm'),email=document.getElementById('loginEmail'),password=document.getElementById('loginPassword'),loginMessage=document.getElementById('loginMessage');
+// ===== ADMIN CHARACTER LOGIN STATES =====
+const adminCharacter = document.getElementById('adminCharacter');
+const characterStatus = document.getElementById('characterStatus');
+
+function setCharacterState(state) {
+  if (!adminCharacter || !characterStatus) return;
+
+  if (state === 'checking') {
+    adminCharacter.src = 'assets/admin-character-checking.png';
+    characterStatus.textContent = 'Checking credentials...';
+    return;
+  }
+
+  if (state === 'success') {
+    adminCharacter.src = 'assets/admin-character-success.png';
+    characterStatus.textContent = 'Access Granted!';
+    return;
+  }
+
+  adminCharacter.src = 'assets/admin-character-idle.png';
+  characterStatus.textContent = 'Secure Login Only!';
+}
 email.value='';
 const msg=(el,t,type='')=>{el.textContent=t;el.className='message '+type};
 const esc=s=>String(s??'').replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#039;'}[c]));
 document.getElementById('togglePassword').onclick=()=>{password.type=password.type==='password'?'text':'password'};
-loginForm.onsubmit=async e=>{e.preventDefault();if(!configured){msg(loginMessage,'Complete Supabase setup first.','error');return;}const em=email.value.trim().toLowerCase();if(cfg.ADMIN_EMAIL&&em!==cfg.ADMIN_EMAIL.toLowerCase()){msg(loginMessage,'This account is not authorized.','error');return;}msg(loginMessage,'Checking credentials...');const {data,error}=await sb.auth.signInWithPassword({email:em,password:password.value});if(error){msg(loginMessage,'Login failed. Check email/password.','error');return;}if(cfg.ADMIN_EMAIL&&data.user.email.toLowerCase()!==cfg.ADMIN_EMAIL.toLowerCase()){await sb.auth.signOut();msg(loginMessage,'Unauthorized account.','error');return;}await showAdmin(data.user)};
-document.getElementById('logoutBtn').onclick=async()=>{await sb.auth.signOut();adminView.hidden=true;loginView.hidden=false;password.value=''};
+loginForm.onsubmit = async e => {
+  e.preventDefault();
+
+  if (!configured) {
+    msg(loginMessage, 'Complete Supabase setup first.', 'error');
+    setCharacterState('idle');
+    return;
+  }
+
+  const em = email.value.trim().toLowerCase();
+
+  if (cfg.ADMIN_EMAIL && em !== cfg.ADMIN_EMAIL.toLowerCase()) {
+    msg(loginMessage, 'This account is not authorized.', 'error');
+    setCharacterState('idle');
+    return;
+  }
+
+ // Character changes while Supabase checks login
+setCharacterState('checking');
+msg(loginMessage, 'Checking credentials...');
+
+// Keep checking character visible for at least 700ms
+const checkingStarted = Date.now();
+
+const { data, error } = await sb.auth.signInWithPassword({
+  email: em,
+  password: password.value
+});
+
+const checkingElapsed = Date.now() - checkingStarted;
+
+if (checkingElapsed < 700) {
+  await new Promise(resolve =>
+    setTimeout(resolve, 700 - checkingElapsed)
+  );
+}
+
+  if (error) {
+    setCharacterState('idle');
+    msg(loginMessage, 'Login failed. Check email/password.', 'error');
+    return;
+  }
+
+  if (
+    cfg.ADMIN_EMAIL &&
+    data.user.email.toLowerCase() !== cfg.ADMIN_EMAIL.toLowerCase()
+  ) {
+    await sb.auth.signOut();
+    setCharacterState('idle');
+    msg(loginMessage, 'Unauthorized account.', 'error');
+    return;
+  }
+
+  // Successful login
+  setCharacterState('success');
+  msg(loginMessage, 'Access granted!', 'success');
+
+  // Success character ko thodi der visible rakho
+  await new Promise(resolve => setTimeout(resolve, 900));
+
+  await showAdmin(data.user);
+};
+document.getElementById('logoutBtn').onclick = async () => {
+    await sb.auth.signOut();
+
+    // Hide admin dashboard and show login screen
+    adminView.hidden = true;
+    loginView.hidden = false;
+
+    // Clear login fields
+    email.value = '';
+    password.value = '';
+
+    // Reset login message
+    loginMessage.textContent = '';
+    loginMessage.className = 'message';
+
+    // Reset cartoon back to normal login state
+    setCharacterState('idle');
+
+    // Return to top of login page
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+};
 async function showAdmin(user){loginView.hidden=true;adminView.hidden=false;document.getElementById('adminIdentity').textContent='Signed in as '+user.email;await loadProjects()}
 async function loadProjects(){const list=document.getElementById('projectList');list.innerHTML='<div class="message">Loading projects...</div>';const {data,error}=await sb.from('projects').select('*').order('created_at',{ascending:false});if(error){list.innerHTML='<div class="message error">'+esc(error.message)+'</div>';return;}document.getElementById('totalProjects').textContent=data.length;document.getElementById('publishedProjects').textContent=data.filter(p=>p.is_published).length;if(!data.length){list.innerHTML='<div class="message">No managed projects yet. Click Add Project.</div>';return;}list.innerHTML=data.map(p=>`<article class="project-row">${p.image_url?`<img class="thumb" src="${esc(p.image_url)}" alt="">`:'<div class="thumb"></div>'}<div><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p><div class="meta"><span class="chip">${esc(p.project_type)}</span><span class="chip ${p.is_published?'live':''}">${p.is_published?'Published':'Draft'}</span></div></div><div class="row-actions"><button class="secondary" data-edit="${p.id}"><i class="fa-solid fa-pen"></i> Edit</button><button class="danger" data-delete="${p.id}"><i class="fa-solid fa-trash"></i> Delete</button></div></article>`).join('');list.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>editProject(data.find(p=>p.id===b.dataset.edit)));list.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>deleteProject(b.dataset.delete))}
 const modal=document.getElementById('editorModal'),form=document.getElementById('projectForm'),editorMsg=document.getElementById('editorMessage');
