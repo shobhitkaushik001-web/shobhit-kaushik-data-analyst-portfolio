@@ -433,3 +433,46 @@ body.light #loginView .login-card { background: rgba(255,255,255,.96); }
   #loginView .character-status { right: 0; top: 5%; font-size: 9px; max-width: 120px; }
   #adminView { width: calc(100% - 28px); }
 }
+
+
+/* ===== DARK MODE TEXT VISIBILITY FIX ===== */
+
+body:not(.light) #loginView .admin-main-title {
+    color: #ffffff;
+}
+
+body:not(.light) #loginView .admin-main-title span {
+    color: #22e27c;
+}
+
+body:not(.light) #loginView .showcase-title {
+    color: #22e27c;
+}
+
+body:not(.light) #loginView .showcase-tools b {
+    color: #ffffff;
+}
+
+body:not(.light) #loginView .showcase-tools small {
+    color: #9bb9ae;
+}
+
+body:not(.light) #loginView .showcase-tools i {
+    color: #22e27c;
+}
+
+/* ===== MOBILE CHARACTER SPEECH BUBBLE FIX ===== */
+@media (max-width: 700px) {
+
+    #loginView .character-status {
+        top: -18px;
+        right: -45px;
+        transform: none;
+        max-width: 130px;
+        padding: 8px 11px;
+        font-size: 10px;
+        line-height: 1.25;
+        white-space: nowrap;
+        z-index: 10;
+    }
+}
