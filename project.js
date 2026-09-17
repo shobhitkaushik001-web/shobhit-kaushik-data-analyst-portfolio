@@ -62,19 +62,112 @@ const data = {
  }
 };
 
-const id = new URLSearchParams(location.search).get("id") || "starbucks";
-const p = data[id] || data.starbucks;
+const params = new URLSearchParams(location.search);
+const id = params.get("id") || "starbucks";
+const source = params.get("source");
 
-document.title = p.title + " | Shobhit Kaushik";
-document.getElementById("type").textContent = p.type;
-document.getElementById("title").textContent = p.title;
-document.getElementById("summary").textContent = p.summary;
-document.getElementById("tags").innerHTML = p.tags.map(t=>`<span class="tag">${t}</span>`).join("");
-document.getElementById("gallery").innerHTML = p.images.map(src=>`<img src="${src}" alt="${p.title} dashboard">`).join("");
-document.getElementById("objective").textContent = p.objective;
-document.getElementById("prep").textContent = p.prep;
-document.getElementById("analysis").textContent = p.analysis;
-document.getElementById("dashboard").textContent = p.dashboard;
-document.getElementById("steps").innerHTML = p.steps.map(s=>`<li>${s}</li>`).join("");
-document.getElementById("repo").href = p.repo;
-document.getElementById("repo2").href = p.repo;
+function renderProject(p) {
+  document.title = p.title + " | Shobhit Kaushik";
+  document.getElementById("type").textContent = p.type || "DATA ANALYTICS";
+  document.getElementById("title").textContent = p.title;
+  document.getElementById("summary").textContent = p.summary || "";
+  document.getElementById("tags").innerHTML = (p.tags || [])
+    .map(t => `<span class="tag">${t}</span>`).join("");
+
+  document.getElementById("gallery").innerHTML = (p.images || [])
+    .map(src => `<img src="${src}" alt="${p.title} dashboard">`).join("");
+
+  document.getElementById("objective").textContent = p.objective || "";
+  document.getElementById("prep").textContent = p.prep || "";
+  document.getElementById("analysis").textContent = p.analysis || "";
+  document.getElementById("dashboard").textContent = p.dashboard || "";
+
+  document.getElementById("steps").innerHTML = (p.steps || [])
+    .map(s => `<li>${s}</li>`).join("");
+
+  document.getElementById("repo").href = p.repo || "#";
+  document.getElementById("repo2").href = p.repo || "#";
+}
+
+async function loadProject() {
+  // Existing fixed projects: Netflix, Starbucks, Spotify, Amazon, Airbnb
+  if (source !== "admin" && data[id]) {
+    renderProject(data[id]);
+    return;
+  }
+
+  // Projects published from secure Admin Panel
+  if (source === "admin") {
+    try {
+      const cfg = window.PORTFOLIO_CONFIG;
+
+      if (!cfg || !cfg.SUPABASE_URL || !cfg.SUPABASE_ANON_KEY) {
+        throw new Error("Supabase configuration is missing.");
+      }
+
+      const sb = window.supabase.createClient(
+        cfg.SUPABASE_URL,
+        cfg.SUPABASE_ANON_KEY
+      );
+
+      const { data: project, error } = await sb
+        .from("projects")
+        .select("id,title,description,github_url,project_type,tools,image_url,key_insight,is_published")
+        .eq("id", id)
+        .eq("is_published", true)
+        .single();
+
+      if (error) throw error;
+      if (!project) throw new Error("Project not found.");
+
+      const p = {
+        type: (project.project_type || "Data Analytics").toUpperCase(),
+        title: project.title,
+        summary: project.description || "",
+        tags: Array.isArray(project.tools) ? project.tools : [],
+        images: project.image_url ? [project.image_url] : [],
+        repo: project.github_url || "#",
+
+        objective:
+          project.key_insight ||
+          `Analyze the project data and transform it into clear, decision-ready business insights.`,
+
+        prep:
+          `Cleaned, validated and prepared the source data for accurate analysis and reporting.`,
+
+        analysis:
+          `Analyzed key metrics, patterns and business trends using ${Array.isArray(project.tools) && project.tools.length ? project.tools.join(", ") : "data analytics tools"}.`,
+
+        dashboard:
+          `Built an interactive ${project.project_type || "analytics"} dashboard to communicate KPIs, trends and actionable insights.`,
+
+        steps: [
+          "Understand the business requirements and project objectives.",
+          "Clean and prepare the source data.",
+          "Create the required data model, calculations and KPIs.",
+          "Analyze important trends, patterns and business metrics.",
+          "Build and format the interactive dashboard.",
+          "Validate results and publish the completed project to the portfolio."
+        ]
+      };
+
+      renderProject(p);
+
+    } catch (err) {
+      console.error("Could not load admin project:", err);
+
+      document.getElementById("title").textContent =
+        "Project could not be loaded";
+
+      document.getElementById("summary").textContent =
+        "Please return to the portfolio and try again.";
+    }
+
+    return;
+  }
+
+  // Safe fallback for old links
+  renderProject(data[id] || data.starbucks);
+}
+
+loadProject();

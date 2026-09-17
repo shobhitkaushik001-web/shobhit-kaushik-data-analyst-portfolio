@@ -168,6 +168,27 @@ function openProject(id){
   modal.setAttribute("aria-hidden","false");
   document.body.style.overflow = "hidden";
 }
+// ===== DYNAMIC ADMIN PROJECT DASHBOARD PREVIEW =====
+function openDynamicProject(project) {
+  if (!project) return;
+
+  modalTitle.textContent = project.title || "Project Dashboard";
+
+  if (project.image_url) {
+    modalGallery.innerHTML =
+      `<img src="${project.image_url}" alt="${project.title || "Project"} dashboard">`;
+  } else {
+    modalGallery.innerHTML =
+      `<p>Dashboard preview image is not available.</p>`;
+  }
+
+  caseStudyBtn.href = `project.html?id=${encodeURIComponent(project.id)}&source=admin`;
+  caseStudyBtn.target = "_blank";
+
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
 function closeModal(){
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden","true");
@@ -226,13 +247,39 @@ nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.cla
     ${p.key_insight ? `<div class="project-insight"><i class="fa-solid fa-lightbulb project-insight-icon"></i><strong>Key Insight:</strong><span>${esc(p.key_insight)}</span></div>` : ''}
     <div class="tags">${tools.slice(0,4).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
     <div class="project-actions">
-      <a class="view-dashboard" href="${esc(p.github_url)}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Dashboard</a>
+      <button class="view-dashboard dynamic-dashboard-btn" type="button" data-project-id="${esc(p.id)}"><i class="fa-solid fa-expand"></i> View Dashboard</button>
       <a href="${esc(p.github_url)}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
     </div>
   </div>
 </article>`;
     }).join('');
     grid.insertAdjacentHTML('beforeend',cards);
+    // ===== AUTO PROJECT COUNT + ANIMATION =====
+const projectCountEl = document.getElementById("projectCount");
+
+if (projectCountEl) {
+  const fixedProjectCount = Object.keys(projects).length;
+  const adminProjectCount = data.length;
+  const totalProjects = fixedProjectCount + adminProjectCount;
+
+  let currentCount = 0;
+
+  const counter = setInterval(() => {
+    currentCount++;
+    projectCountEl.textContent = currentCount + "+";
+
+    if (currentCount >= totalProjects) {
+      clearInterval(counter);
+    }
+  }, 120);
+}
+    grid.querySelectorAll('.dynamic-dashboard-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const projectId = btn.dataset.projectId;
+    const project = data.find(p => String(p.id) === String(projectId));
+    openDynamicProject(project);
+  });
+});
   }catch(e){console.warn('Secure projects could not be loaded:',e.message)}
 })();
 
