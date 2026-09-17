@@ -465,8 +465,8 @@ body:not(.light) #loginView .showcase-tools i {
 @media (max-width: 700px) {
 
     #loginView .character-status {
-        top: -18px;
-        right: -45px;
+        top: -5px;
+        right: -18px;
         transform: none;
         max-width: 130px;
         padding: 8px 11px;
